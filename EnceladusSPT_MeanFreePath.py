@@ -42,7 +42,7 @@ def FreezeLength(r0, n0, sigma, dd, MM, gamma):
 ############### MAIN ##############################
 ###################################################
 
-# number density: 1/10 of the triple
+# number density: 1/10 of the triple point
 n0=1.6e22
 # collisional cross section of a water molecule
 sigma=4e-19
@@ -79,7 +79,7 @@ plt.rcParams["axes.titleweight"] = "bold"
 plt.rcParams["axes.labelsize"] = 14
 plt.rcParams["axes.titlesize"] = 14
 
-mode = 2
+mode = 1
 
 if mode==1:
     fig, p1 = plt.subplots(1)
@@ -117,7 +117,9 @@ elif mode==2:
     p1.set(ylabel='COLLISIONAL DECOUPLING LENGTH [m]')
     p1.set(title='GEOMETRIC, ADIABATIC EXPANSION (NO PRESSURE, NO GRAVITY)')
     p1.legend(loc="upper left", bbox_to_anchor=(0.02, 0.98),prop={"weight": "bold"})
-    p1.text(0.04, 0.68, r"$\mathbf{L=r_0\left[\frac{r_0\,\sigma\,n_0}{d\,M}\right]^{\left(\frac {d} {2} (\gamma +1)-1\right)^{-1}}}$", transform=p1.transAxes,
+    p1.text(0.04, 0.68,
+            r"$\mathbf{L=r_0\left[\frac{r_0\,\sigma\,n_0}{d\,M}\right]^{\left(\frac {d} {2} (\gamma +1)-1\right)^{-1}}}$",
+            transform=p1.transAxes,
         ha="left", va="top")
 #p1.xaxis.set_major_locator(MultipleLocator(2))
 #p1.xaxis.set_minor_locator(MultipleLocator(1))
